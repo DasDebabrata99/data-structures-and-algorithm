@@ -26,10 +26,10 @@ import java.util.List;
 public class PascalTriangleOptimum {
 
 	public long getElement(int row, int col) {
-		int n = row-1;
-		int r = col-1;
+		int n = row-1; //5
+		int r = col-1;//2
 		long result=1;
-		for(int i = 0; i<=r;i++) {
+		for(int i = 0; i<=r;i++) {// 1*5/1=5  , 5*4/2=10 
 			result = result * (n-i);
 			result = result /(i+1);
 		}
@@ -39,7 +39,7 @@ public class PascalTriangleOptimum {
 	
 	public static void main(String[] args) {
 		PascalTriangleOptimum instance = new PascalTriangleOptimum();
-		long res = instance.getElement(5, 3);
+		long res = instance.getElement(6, 3);
 		System.out.println(res);
 		
 		System.out.println(instance.getRow(6));
@@ -66,7 +66,7 @@ public class PascalTriangleOptimum {
 	 *  5/1 , 5*4 / 1*2 , 5*4 *3/1*2*3 , 5*4*2*3*1/1*2*3*4, 5*4*3*2*1/1*2*3*4*5
 	 *  
 	 *  5/1, (5/1) *4/2. (5*4/1*2) * 3/3 , (5*4*3/1*2*3) * 2/4,  5C5 (5*4*3*2/1*2*3*4)  * (1/5)
-	 *  nuerator = row-i
+	 *  numerator = row-i
 	 *  denom = i
 	 *  
 	 * for(int i=1;i<row;i++){
